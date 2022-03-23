@@ -17,9 +17,9 @@ public class Robot extends TimedRobot {
   private static final int kRearLeftChannel = 3; // 0?
   private static final int kFrontRightChannel = 1;
   private static final int kRearRightChannel = 0;
-  private static final int kConveyorChannel = 5;
-  private static final int kArmChannel = 6;
-  private static final int kIntakeChannel = 7; // Not testable yet - no controller
+  private static final int kConveyorChannel = 4;
+  private static final int kArmChannel = 5;
+  private static final int kIntakeChannel = 6; // Not testable yet - no controller
 
   private static final int kDriveChannel = 0;
   private static final int kControlChannel = 1;
@@ -88,6 +88,6 @@ public class Robot extends TimedRobot {
       //This is basically the same as saying if forward is greater than backward then pick forward,
       //otherwise pick backward to set the conveyor to
     arm.set((c_stick.getRawButton(Buttons.A.getValue())) ? .1 : 0); // Need to set button to someting nice
-    intake.set((c_stick.getRawButton(Buttons.B.getValue())) ? .1 : 0); //
+    //intake.set((c_stick.getRawButton(Buttons.B.getValue())) ? .1 : 0); //
   }
 }
