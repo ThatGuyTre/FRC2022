@@ -80,14 +80,16 @@ public class Robot extends TimedRobot {
 
     forward = c_stick.getRawAxis(3);
     backward = -c_stick.getTwist();
-    System.out.println(c_stick.getAxisCount());
+    System.out.printf("forward: %f, backward: %f",forward, backward);
+    //System.out.println(c_stick.getAxisCount());
     //These commands may need to change. The goal was to make the right trigger forward and the left trigger backward.
 
-    conveyor.set((Math.abs(forward)>Math.abs(backward)) ? forward : backward);
+    //the .set() function may be wrong
+    //conveyor.set((Math.abs(forward)>Math.abs(backward)) ? forward : backward);
     //The set command above is a little convoluted if you dont know about ternary operators
       //This is basically the same as saying if forward is greater than backward then pick forward,
       //otherwise pick backward to set the conveyor to
-    arm.set((c_stick.getRawButton(Buttons.A.getValue())) ? .1 : 0); // Need to set button to someting nice
+    //arm.set((c_stick.getRawButton(Buttons.A.getValue())) ? .1 : 0); // Need to set button to someting nice
     //intake.set((c_stick.getRawButton(Buttons.B.getValue())) ? .1 : 0); //
   }
 }
